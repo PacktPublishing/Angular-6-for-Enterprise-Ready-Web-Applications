@@ -1,0 +1,131 @@
+swagger: '2.0'
+info:
+  title: LemonMart
+  description: LemonMart API
+  version: "1.0.0"
+
+host: localhost:3000
+basePath: /v1
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+
+definitions:
+  Role:
+    type: string
+    enum: [clerk, cashier, manager]
+  Name:
+    type: object
+    properties:
+      first:
+        type: string
+      middle:
+        type: string
+      last:
+        type: string
+  User:
+    type: object
+    properties:
+      id:
+        type: string
+      email:
+        type: string
+      name:
+        $ref: '#/definitions/Name'
+      picture:
+        type: string
+      role:
+        $ref: '#/definitions/Role'
+      userStatus:
+        type: boolean
+      lastModified:
+        type: string
+        format: date
+      lastModifiedBy:
+        type: string
+  Users:
+    type: object
+    properties:
+      total:
+        type: number
+        format: int32
+      items:
+        $ref: '#/definitions/ArrayOfUser'
+  ArrayOfUser:
+    type: array
+    items:
+      $ref: '#/definitions/User'
+
+parameters:
+  offsetParam: # <-- Arbitrary name for the definition that will be used to refer to it.
+                # Not necessarily the same as the parameter name.
+    in: query
+    name: offset
+    required: false
+    type: integer
+    minimum: 0
+    description: The number of items to skip before starting to collect the result set.
+  limitParam:
+    in: query
+    name: limit
+    required: false
+    type: integer
+    minimum: 1
+    maximum: 50
+    default: 20
+    description: The numbers of items to return.
+
+paths:
+  /users:
+    get:
+      description: |
+        Searches and returns `User` objects.
+        Optional query params determines values of returned array
+      parameters:
+        - in: query
+          name: search
+          required: false
+          type: string
+          description: Search text
+        - $ref: '#/parameters/offsetParam'
+        - $ref: '#/parameters/limitParam'
+      responses:
+        200: # Response
+          description: OK
+          schema:
+            $ref: '#/definitions/Users'
+  /user/{id}:
+    get:
+      description: Gets a `User` object by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: string
+          description: User's unique id
+      responses:
+         200: # Response
+          description: OK
+          schema:
+            $ref: '#/definitions/User'
+    put:
+      description: Updates a `User` object given id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: string
+          description: User's unique id
+        - in: body
+          name: userData
+          schema:
+            $ref: '#/definitions/User'
+          description: Updated user object
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/User'

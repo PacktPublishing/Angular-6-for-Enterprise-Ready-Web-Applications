@@ -1,0 +1,169 @@
+---
+swagger: "2.0"
+info:
+  description: "LemonMart API"
+  version: "1.0.0"
+  title: "LemonMart"
+host: "localhost:3000"
+basePath: "/v1"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /users:
+    get:
+      description: "Searches and returns `User` objects.\nOptional query params determines\
+        \ values of returned array\n"
+      operationId: "usersGET"
+      parameters:
+      - name: "search"
+        in: "query"
+        description: "Search text"
+        required: false
+        type: "string"
+      - name: "offset"
+        in: "query"
+        description: "The number of items to skip before starting to collect the result\
+          \ set."
+        required: false
+        type: "integer"
+        minimum: 0
+      - name: "limit"
+        in: "query"
+        description: "The numbers of items to return."
+        required: false
+        type: "integer"
+        default: 20
+        maximum: 50
+        minimum: 1
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Users"
+      x-swagger-router-controller: "Default"
+  /user/{id}:
+    get:
+      description: "Gets a `User` object by id"
+      operationId: "userIdGET"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "User's unique id"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/User"
+      x-swagger-router-controller: "Default"
+    put:
+      description: "Updates a `User` object given id"
+      operationId: "userIdPUT"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "User's unique id"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "userData"
+        description: "Updated user object"
+        required: false
+        schema:
+          $ref: "#/definitions/User"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/User"
+      x-swagger-router-controller: "Default"
+definitions:
+  Role:
+    type: "string"
+    enum:
+    - "clerk"
+    - "cashier"
+    - "manager"
+  Name:
+    type: "object"
+    properties:
+      first:
+        type: "string"
+      middle:
+        type: "string"
+      last:
+        type: "string"
+    example:
+      middle: "middle"
+      last: "last"
+      first: "first"
+  User:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      email:
+        type: "string"
+      name:
+        $ref: "#/definitions/Name"
+      picture:
+        type: "string"
+      role:
+        $ref: "#/definitions/Role"
+      userStatus:
+        type: "boolean"
+      lastModified:
+        type: "string"
+        format: "date"
+      lastModifiedBy:
+        type: "string"
+    example:
+      role: {}
+      userStatus: true
+      lastModifiedBy: "lastModifiedBy"
+      name:
+        middle: "middle"
+        last: "last"
+        first: "first"
+      id: "id"
+      lastModified: "2000-01-23"
+      email: "email"
+      picture: "picture"
+  Users:
+    type: "object"
+    properties:
+      total:
+        type: "number"
+        format: "int32"
+      items:
+        $ref: "#/definitions/ArrayOfUser"
+    example:
+      total: 0.80082819046101150206595775671303272247314453125
+      items: ""
+  ArrayOfUser:
+    type: "array"
+    items:
+      $ref: "#/definitions/User"
+parameters:
+  offsetParam:
+    name: "offset"
+    in: "query"
+    description: "The number of items to skip before starting to collect the result\
+      \ set."
+    required: false
+    type: "integer"
+    minimum: 0
+  limitParam:
+    name: "limit"
+    in: "query"
+    description: "The numbers of items to return."
+    required: false
+    type: "integer"
+    default: 20
+    maximum: 50
+    minimum: 1
