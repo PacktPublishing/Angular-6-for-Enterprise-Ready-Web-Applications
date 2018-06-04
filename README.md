@@ -1,18 +1,29 @@
 # Angular 6 for Enterprise-Ready Web Applications
-This is the code repository for [Angular 6 for Enterprise-Ready Web Applications](https://www.packtpub.com/web-development/angular-6-enterprise-ready-web-applications?utm_source=github&utm_medium=repository&utm_campaign=9781786462909), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the book from start to finish.
-## About the Book
+
+<a href="https://www.packtpub.com/web-development/angular-6-enterprise-ready-web-applications?utm_source=github&utm_medium=repository&utm_campaign=9781786462909"><img src="https://www.packtpub.com/sites/default/files/B05684_cover.png" alt="Angular 6 for Enterprise-Ready Web Applications" height="256px" align="right"></a>
+
+This is the code repository for [Angular 6 for Enterprise-Ready Web Applications](https://www.packtpub.com/web-development/angular-6-enterprise-ready-web-applications?utm_source=github&utm_medium=repository&utm_campaign=9781786462909), published by Packt.
+
+**Deliver production-ready and cloud-scale Angular web apps**
+
+## What is this book about?
 Angular 6 for Enterprise-Ready Web Applications follows a hands-on and minimalist approach demonstrating how to design and architect high quality apps.
 
-The first part of the book is about mastering the Angular platform using foundational technologies. You will use the Kanban method to focus on value delivery, communicate design ideas with mock-up tools and build great looking apps with Angular Material. You will become comfortable using CLI tools, understand reactive programming with RxJS, and deploy to the cloud using Docker.
+This book covers the following exciting features:
+* Create full-stack web applications using Angular and RESTful APIs 
+* Master Angular fundamentals, RxJS, CLI tools, unit testing, GitHub, and Docker 
+* Design and architect responsive, secure and scalable apps to deploy on AWS
+* Adopt a minimalist, value-first approach to delivering your app with Kanban
+* Get introduced to automated testing with continuous integration on CircleCI 
 
-The second part of the book will introduce you to the router-first architecture, a seven-step approach to designing and developing mid-to-large line-of-business applications, along with popular recipes. You will learn how to design a solid authentication and authorization experience; explore unit testing, early integration with backend APIs using Swagger and continuous integration using CircleCI. In the concluding chapters, you will provision a highly available cloud infrastructure on AWS and then use Google Analytics to capture user behavior.
+If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1786462907) today!
 
-By the end of this book, you will be familiar with the scope of web development using Angular, Swagger, and Docker, learning patterns and practices to be successful as an individual developer on the web or as a team in the Enterprise.
-
-## Instructions and Navigation
-All of the code is organized into folders. Each folder starts with a number followed by the application name. For example, Chapter02.
+<a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
+alt="https://www.packtpub.com/" border="5" /></a>
 
 
+## Instructions and Navigations
+All of the code is organized into folders. For example, Chapter02.
 
 The code will look like the following:
 ```
@@ -23,13 +34,35 @@ The code will look like the following:
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-  },
+   },
 ```
 
-You should already be familiar with full-stack web development
-Follow the book in the published order, coding your solution alongside the content in each chapter
+**Following is what you need for this book:**
 
-## Related Products
-* [Hands-on Full Stack Development with Angular 5 and Firebase](https://www.packtpub.com/application-development/hands-full-stack-development-angular-5-and-firebase?utm_source=github&utm_medium=repository&utm_campaign=9781788298735)
+This book is for developers who want to confidently deliver high-quality and production-grade Angular apps from design to deployment. We assume that you have prior experience in writing a RESTful API with the tech stack of your choice; if you don't, you can still gain a lot of benefit from this book, which focuses on the entire scope of frontend development, from design to deployment!
 
-* [Architecting Angular Applications with Redux, RxJS, and NgRx](https://www.packtpub.com/web-development/architecting-angular-applications-redux?utm_source=github&utm_medium=repository&utm_campaign=9781787122406)
+With the following software and hardware list you can run all code files present in the book (Chapter 1-12).
+
+### Software and Hardware List
+
+| Chapter  | Software required                   | OS required                        |
+| -------- | ------------------------------------| -----------------------------------|
+| 1        | PowerShell v5.1+, Bash, Node 8.10+ (except non-LTS versions), npm 5.7.1+, GitHub Desktop 1.0.0+, Visual Studio Code v1.16.0+, Google Chrome 64+                     | Windows, macOS, Linux |
+| 2        | GitHub, Waffle, Angular 5+            | |
+| 3-5        | Docker Community Edition Version 17.12+, Zeit Now            | Windows, macOS, Linux, Azure, AWS |
+| 6-7        | MockFlow          | Windows, macOS, Linux |
+| 8-10        | CircleCI, Swagger           |   |
+| 11        | AWS            |  |
+| 12      | Google Tag Manager, Google Analytics, OctoPerf         |  |
+
+
+### Related products <Other books you may enjoy>
+* Hands-on Full Stack Development with Angular 5 and Firebase [[Packt]](https://www.packtpub.com/application-development/hands-full-stack-development-angular-5-and-firebase?utm_source=github&utm_medium=repository&utm_campaign=9781788298735) [[Amazon]](https://www.amazon.com/dp/178829873X)
+
+* Architecting Angular Applications with Redux, RxJS, and NgRx [[Packt]](https://www.packtpub.com/web-development/architecting-angular-applications-redux?utm_source=github&utm_medium=repository&utm_campaign=9781787122406) [[Amazon]](https://www.amazon.com/dp/1787122409)
+
+## Get to Know the Author
+**Doguhan Uluca** is a software development expert for Excella Consulting in Washington, DC. He is the founder and director of the polyglot Tech Talk DC meetup and the creator of the DC Full Stack Web Summit conference. Doguhan has been published on DevPro and ACM. He is a speaker at international conferences, such as Ng-Conf, CodeStock, deliver:Agile and Agile XP. He is a full-stack JavaScript, Agile, and cloud engineering practitioner. Doguhan is an active contributor to the open source community, with libraries and tools published for JavaScript, Angular, Node, and MongoDB.
+
+### Suggestions and Feedback
+[Click here](https://docs.google.com/forms/d/e/1FAIpQLSdy7dATC6QmEL81FIUuymZ0Wy9vH1jHkvpY57OiMeKGqib_Ow/viewform) if you have any feedback or suggestions.
