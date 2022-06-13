@@ -1,7 +1,3 @@
-## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B14094?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
------
-For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
-
 # Angular 6 for Enterprise-Ready Web Applications
 
 <a href="https://www.packtpub.com/web-development/angular-6-enterprise-ready-web-applications?utm_source=github&utm_medium=repository&utm_campaign=9781786462909"><img src="https://www.packtpub.com/sites/default/files/B05684_cover.png" alt="Angular 6 for Enterprise-Ready Web Applications" height="256px" align="right"></a>
